@@ -1,0 +1,27 @@
+@mixin font($font_name, $file_name, $weight, $style) {
+	@font-face {
+		font-family: $font_name;
+		font-display: swap;
+		src: url("../fonts/#{$file_name}.woff") format("woff"),
+		url("../fonts/#{$file_name}.woff2") format("woff2");
+		font-weight: #{$weight};
+		font-style: #{$style};
+	}
+}
+
+$bgcolor_1: #fafafa;
+$bgcolor_2: #fff;
+$border-radius: 8px;
+$box-shadow: 1px 3px 3px rgba(62, 63, 64, 0.1);
+
+@import "fonts";
+
+body {
+	font-family: WorkSans-Regular;
+	font-weight: 400;
+	background-color: #E5E5E5;
+	@media (max-width: 660px) {
+		height: auto;
+	}
+}
+
