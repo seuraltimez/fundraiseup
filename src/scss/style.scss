@@ -1,3 +1,4 @@
+// Fonts
 @mixin font($font_name, $file_name, $weight, $style) {
 	@font-face {
 		font-family: $font_name;
@@ -9,10 +10,20 @@
 	}
 }
 
-$bgcolor_1: #fafafa;
-$bgcolor_2: #fff;
-$border-radius: 8px;
-$box-shadow: 1px 3px 3px rgba(62, 63, 64, 0.1);
+// End fonts
+
+// Variables
+$bgColor: #fafafa;
+$white: #fff;
+$bRadius: 8px;
+$bShadow: 1px 3px 3px rgba(62, 63, 64, 0.1);
+$color: #2F2F30;
+$colorGreen: #2EB670;
+// End variables
+
+input {
+	box-shadow: none;
+}
 
 @import "fonts";
 
@@ -20,8 +31,120 @@ body {
 	font-family: WorkSans-Regular;
 	font-weight: 400;
 	background-color: #E5E5E5;
-	@media (max-width: 660px) {
-		height: auto;
+	margin: 0px;
+	padding: 0px;
+}
+
+.wrapper {
+	padding-top: 53px;
+}
+
+.container {
+	max-width: 1224px;
+	margin: 0 auto;
+	padding: 0 15px;
+}
+
+.page-header {
+	border-radius: $bRadius;
+	border: 1px solid #DBDCDE;
+	box-shadow: 1px 3px 3px rgba(62, 63, 64, 0.1);
+	background-color: $white;
+	margin-bottom: 24px;
+
+	&__top {
+		padding: 28px 32px;
+
+		h1 {
+			font-weight: normal;
+			font-size: 24px;
+			color: $color;
+			margin: 0px;
+			margin-top: 3px;
+			line-height: 1;
+		}
+	}
+
+	&__bottom {
+		padding: 16px 32px;
+		background-color: #FAFAFA;
+		border-top: 1px solid #DBDCDE;
+		border-radius: 0px 0px 8px 8px;
 	}
 }
 
+.form-search {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	flex-wrap: wrap;
+	width: 100%;
+
+	&__input {
+		margin-right: 40px;
+		flex: 0 0 336px;
+		margin-top: 3px;
+	}
+
+	&__field {
+		padding: 8px 8px 8px 42px;
+		border-radius: $bRadius;
+		border: 1px solid #DBDCDE;
+		width: 100%;
+		height: 40px;
+		font-weight: normal;
+		font-size: 16px;
+		line-height: 24px;
+		color: #6C6D6F;
+	}
+
+	&__select {
+		flex: 0 0 116px;
+		select {
+			font-family: WorkSans-Regular;
+			border: 0px;
+			background-color: transparent;
+			width: 100%;
+			height: 24px;
+			font-weight: normal;
+			font-size: 16px;
+			line-height: 24px;
+			color: #2F2F30;
+			margin: 0px;
+			margin-left: -3px;
+			padding: 0px;
+		}
+	}
+}
+
+.page-body{
+	&__content{
+		display: flex;
+		flex-wrap: wrap;
+		margin-left: -12px;
+		margin-right: -12px;
+	}
+}
+
+.main-content{
+	padding-right: 12px;
+	padding-left: 12px;
+	max-width: 936px;
+	width: 100%;
+	&__top{
+		background-color: #fff;
+	}
+	&__body{
+		background-color: #DBDCDE;
+	}
+}
+
+.sidebar{
+	padding-left: 12px;
+	padding-right: 12px;
+	max-width: 264px;
+	width: 100%;
+	&__content{
+		background-color: #fff;
+	}
+}

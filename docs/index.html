@@ -1,14 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" href="css/style.min.css"/>
-		<title>Frontend test for Fundraise</title>
-	</head>
-	<body>
-		
-		<script src="js/script.min.js"></script>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.min.css" />
+    <title>Frontend test for Fundraise</title>
+  </head>
+  <body>
+    <header></header>
+    <main>
+      <div class="wrapper">
+        <div class="container">
+          <div class="page-header">
+            <div class="page-header__top">
+              <h1>Donations</h1>
+            </div>
+            <div class="page-header__bottom">
+              <form action="#" class="form-search">
+                <div class="form-search__input">
+                  <input
+                    type="search"
+                    class="form-search__field"
+                    placeholder="Search"
+                  />
+                </div>
+                <div class="form-search__select">
+                  <select name="status" id="status">
+                    <option value="All statuses">All statuses</option>
+                    <option value="Status 1">Status 1</option>
+                    <option value="Status 1">Status 2</option>
+                  </select>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="page-body">
+          <div class="container">
+            <div class="page-body__content">
+              <div class="main-content">
+                <div class="main-content__top">
+                  <div class="dontaion-info">
+                    <div class="dontaion-info__value">
+                      <span class="dontaion-info__value-title">Donation</span>
+                      <div class="currency">
+                        <span class="currency__main">€20.60 EUR</span>
+                        <span class="currency__conversion">≈ $22.22 USD</span>
+                      </div>
+                    </div>
+                    <div class="dontaion-info__id">
+                      <span class="dontaion-info__id-title">ID</span>
+                      <div class="id-copy">
+                        
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="main-content__body"></div>
+              </div>
+              <aside class="sidebar">
+                <div class="sidebar__content"></div>
+              </aside>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer></footer>
+    <script src="js/script.min.js"></script>
+  </body>
 </html>
