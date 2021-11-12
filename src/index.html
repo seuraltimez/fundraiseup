@@ -11,6 +11,7 @@
     <header></header>
     <main>
       <div class="wrapper">
+
         <div class="container">
           <div class="page-header">
             <div class="page-header__top">
@@ -36,6 +37,7 @@
             </div>
           </div>
         </div>
+
         <div class="page-body">
           <div class="container">
             <div class="page-body__content">
@@ -83,12 +85,107 @@
                         Workout for water
                       </a>
                     </div>
-                    <div class="dontaion-status__block"></div>
-                    <div class="dontaion-status__block"></div>
                   </div>
                 </div>
 
-                <div class="main-content__body"></div>
+                <div class="main-content__body">
+                  <form action="#" class="form-changes-widget">
+                    <div class="content-tabs">
+                      <ul class="content-tabs__list">
+                        <li class="content-tabs__list-tab open"><a href="#">Behavior</a></li>
+                        <li class="content-tabs__list-tab"><a href="#">Appearance</a></li>
+                        <li class="content-tabs__list-tab"><a href="#">Custom Fields</a></li>
+                        <li class="content-tabs__list-tab"><a href="#">Questions</a></li>
+                        <li class="content-tabs__list-tab"><a href="#">URL Control</a></li>
+                      </ul>
+                      <div class="content-tabs__contents">
+                        <div class="content-tabs__contents-block open">
+                          <div class="behavior">
+                            <div class="behavior-item designation">
+                              <div class="behavior-item__title">
+                                Designation
+                              </div>
+                              <div class="behavior-item__value">
+                                <select class="behavior-item__value-select" name="name-settings" id="settings">
+                                  <option value="Match Checkout Setting">Match Checkout Setting</option>
+                                  <option value="Match Checkout Setting2">Match Checkout Setting2</option>
+                                  <option value="Match Checkout Setting3">Match Checkout Setting3</option>
+                                </select>
+                              </div>
+                            </div>
+                            <div class="behavior-item">
+                              <div class="behavior-item__title">
+                                Goal
+                              </div>
+                              <div class="behavior-item__value goal">
+                                <input type="text" class="behavior-item__value" value="$10.00">
+                                <select name="name-currency" id="currency">
+                                  <option value="USD">USD</option>
+                                  <option value="RUB">RUB</option>
+                                  <option value="EUR">EUR</option>
+                                </select>
+                              </div>
+                            </div>
+                            <div class="behavior-item">
+                              <div class="behavior-item__title">
+                                Default Amount
+                              </div>
+                              <div class="behavior-item__value">
+                                <div class="behavior-item__value-check">
+                                <input name="default-amount" id="default-amount-one" type="radio" class="behavior-item__value-radio">
+                                <label for="default-amount-one">Match Checkout Setting</label>
+                              </div>
+                              <div class="behavior-item__value-check">
+                                <input name="default-amount" id="default-amount-two" type="radio" class="behavior-item__value-radio" checked>
+                                <label for="default-amount-two">Customize</label>
+                              </div>
+                              <div class="behavior-item__value-check">
+                                <input type="checkbox" class="behavior-item__value-checkbox" id="change-currency" checked>
+                                <label for="change-currency">Allow donor to change default currency</label>
+                              </div>
+                              </div>
+                            </div>
+                            <div class="behavior-item">
+                              <div class="behavior-item__title">
+                                Border size
+                              </div>
+                              <div class="behavior-item__value input-range-block">
+                                <input type="range" class="behavior-item__value-range" max="6" min="0" step="1" value="2">
+                                <span class="score"></span>
+                              </div>
+                            </div>
+                            <div class="behavior-item">
+                              <div class="behavior-item__title">
+                                Border radius
+                              </div>
+                              <div class="behavior-item__value input-range-block">
+                                <input type="range" class="behavior-item__value-range" max="20" min="0" step="1" value="15">
+                                <span class="score"></span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="content-tabs__contents-block">
+                          Appearance content
+                        </div>
+                        <div class="content-tabs__contents-block">
+                          Custom Fields content
+                        </div>
+                        <div class="content-tabs__contents-block">
+                          Questions content
+                        </div>
+                        <div class="content-tabs__contents-block">
+                          URL Control content
+                        </div>
+                      </div>
+                      <div class="content-tabs__footer">
+                        
+                      </div>
+                    </div>
+                  </form>
+                  </div>
+                </div>
+              
               </div>
 
               <aside class="sidebar">

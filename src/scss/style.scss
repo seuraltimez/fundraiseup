@@ -25,6 +25,21 @@ input {
 	box-shadow: none;
 }
 
+button {
+	padding: 0px;
+	margin: 0px
+}
+
+ul {
+	list-style: none;
+	padding: 0px;
+	margin: 0px;
+}
+
+a {
+	text-decoration: none;
+}
+
 @import "fonts";
 
 body {
@@ -138,10 +153,15 @@ body {
 		border: 1px solid #DBDCDE;
 		box-shadow: $bShadow;
 		border-radius: $bRadius;
+		margin-bottom: 24px;
 	}
 
 	&__body {
-		background-color: #DBDCDE;
+		background-color: $white;
+		border: 1px solid #DBDCDE;
+		box-shadow: $bShadow;
+		border-radius: $bRadius;
+		padding-top: 29px;
 	}
 }
 
@@ -321,6 +341,51 @@ body {
 			font-size: 16px;
 			line-height: 24px;
 			color: #6C6D6F;
+		}
+	}
+}
+
+.content-tabs {
+	&__list {
+		display: flex;
+		align-items: center;
+		padding: 0 24px;
+		border-bottom: 1px solid #DBDCDE;
+
+		&-tab {
+			margin-bottom: -1px;
+			a {
+				padding: 15px 16px 12px 15px;
+				border: 1px solid transparent;
+				font-weight: 600;
+				font-size: 12px;
+				line-height: 20px;
+				letter-spacing: 0.03em;
+				text-transform: uppercase;
+				color: $color;
+				border-bottom: 0px;
+				display: block;
+			}
+
+			&.open {
+				a {
+					background-color: $white;
+					border-color: #DBDCDE;
+					border-radius: 6px 6px 0px 0px;
+					color: #00A651;
+				}
+			}
+		}
+	}
+
+	&__contents {
+		&-block {
+			display: none;
+			padding: 40px 60px;
+
+			&.open {
+				display: block;
+			}
 		}
 	}
 }
