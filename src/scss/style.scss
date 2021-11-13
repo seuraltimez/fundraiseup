@@ -81,12 +81,15 @@ body {
 
 .wrapper {
 	padding-top: 53px;
+	overflow: hidden;
+	padding-left: 15px;
+	padding-right: 15px;
 }
 
 .container {
 	max-width: 1224px;
 	margin: 0 auto;
-	padding: 0 15px;
+	width: 100%;
 }
 
 .page-header {
@@ -95,6 +98,9 @@ body {
 	box-shadow: 1px 3px 3px rgba(62, 63, 64, 0.1);
 	background-color: $white;
 	margin-bottom: 24px;
+	flex: 1 0 0%;
+	width: 100%;
+	max-width: 100%;
 
 	&__top {
 		padding: 30px 32px;
@@ -114,6 +120,9 @@ body {
 		background-color: #FAFAFA;
 		border-top: 1px solid #DBDCDE;
 		border-radius: 0px 0px 8px 8px;
+		@media (max-width: 1024px){
+			padding: 20px 20px;
+		}
 	}
 }
 
@@ -128,6 +137,15 @@ body {
 		margin-right: 43px;
 		flex: 0 0 336px;
 		position: relative;
+		@media(max-width: 1024px){
+			width: calc(100% - 160px);
+			flex: 0 0 auto;
+		}
+		@media (max-width: 767px){
+			margin-bottom: 15px;
+			flex: 0 0 100%;
+			margin-right: 0px;
+		}
 
 		&::before {
 			content: '';
@@ -176,6 +194,9 @@ body {
 			background-position: right 8px center;
 			background-size: 9px 6px;
 			background-image: url("data:image/svg+xml,%3Csvg width='11' height='6' viewBox='0 0 11 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 0.75L5.5 5.25L10 0.75' stroke='%236C6D6F' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+			@media (max-width: 1024px){
+				margin-left: 0px;
+			}
 		}
 	}
 }
@@ -186,6 +207,9 @@ body {
 		flex-wrap: wrap;
 		margin-left: -12px;
 		margin-right: -12px;
+		@media (max-width: 1024px){
+			margin: 0px;
+		}
 	}
 }
 
@@ -194,6 +218,13 @@ body {
 	padding-left: 12px;
 	max-width: 936px;
 	width: 100%;
+	flex: 1 0 0;
+	@media (max-width: 1024px){
+		padding: 0px;
+		max-width: 100%;
+		order: 2;
+		width: 100%;
+	}
 
 	&__top {
 		background-color: $white;
@@ -217,10 +248,20 @@ body {
 	justify-content: space-between;
 	align-items: flex-start;
 	padding: 26px 32px 27px 32px;
+	@media (max-width: 1024px){
+		padding: 20px 20px;
+	}
+	@media (max-width: 767px){
+		flex-direction: column;
+	}
 
 	&__value {
 		display: flex;
 		flex-direction: column;
+
+		@media (max-width: 767px){
+			margin-bottom: 15px;
+		}
 
 		&-title {
 			font-size: 14px;
@@ -247,6 +288,9 @@ body {
 	.currency {
 		display: flex;
 		align-items: flex-end;
+		@media (max-width: 1024px){
+			flex-wrap: wrap;
+		}
 
 		&__main {
 			font-size: 24px;
@@ -331,19 +375,31 @@ body {
 	background: #FAFAFA;
 	border-top: 1px solid #DBDCDE;
 	border-radius: 0px 0px 8px 8px;
+	@media (max-width: 1024px){
+		padding: 20px 20px;
+	}
 
 	&__block {
 		display: flex;
 		flex-direction: column;
 		padding: 0 32px;
-
-		&:not(:last-child) {
-			border-right: 1px solid #D7D8DA;
+		@media (max-width: 767px){
+			width: 100%;
+			padding: 0px;
+			margin-bottom: 15px;
 		}
-
+		@media (min-width: 767px){
+			&:not(:last-child) {
+				border-right: 1px solid #D7D8DA;
+			}
+		}
+		
 		&:first-child {
 			padding-left: 0px;
 			padding-right: 34px;
+			@media (max-width: 767px){
+				padding: 0px;
+			}
 
 			.dontaion-status__block-value {
 				font-size: 16px;
@@ -401,6 +457,8 @@ body {
 		align-items: center;
 		padding: 0 24px;
 		border-bottom: 1px solid #DBDCDE;
+		overflow-x: auto;
+		overflow-y: hidden;
 
 		&-tab {
 			margin-bottom: -1px;
@@ -416,6 +474,9 @@ body {
 				color: $color;
 				border-bottom: 0px;
 				display: block;
+				@media (max-width: 1024px){
+					white-space: nowrap;
+				}
 			}
 
 			&.open {
@@ -435,6 +496,10 @@ body {
 		&-block {
 			display: none;
 			padding: 40px 60px;
+
+			@media (max-width: 1024px){
+				padding: 20px 20px;
+			}
 
 			&.open {
 				display: block;
@@ -466,6 +531,11 @@ body {
 		display: flex;
 		align-items: center;
 		max-width: 436px;
+
+		@media (max-width: 1024px){
+			flex-wrap: wrap;
+			max-width: 100%;
+		}
 
 		&:not(:last-child) {
 			margin-bottom: 24px;
@@ -501,6 +571,10 @@ body {
 			color: $color;
 			margin-right: 16px;
 			min-width: 124px;
+			@media (max-width: 1024px){
+				text-align: left;
+				margin-bottom: 10px;
+			}
 		}
 
 		&__value {
@@ -615,6 +689,9 @@ body {
 					position: relative;
 					padding-left: 35px;
 					line-height: 1.5;
+					@media (max-width: 1024px){
+						white-space: normal;
+					}
 
 					&:before {
 						border: 2px solid #2EB670;
@@ -759,13 +836,26 @@ body {
 .sidebar {
 	padding-left: 12px;
 	padding-right: 12px;
-	max-width: 264px;
-	width: 100%;
+	// max-width: 264px;
+	width: 264px;
 	height: auto;
+	@media (max-width: 1024px){
+		max-width: 100%;
+		width: 100%;
+		padding: 0px;
+	}
+	@media (max-width: 768px){
+		order: 1;
+	}
 
 	&__content {
 		position: sticky;
 		top: 24px;
+		@media (max-width: 1024px){
+			position: relative;
+			top: 0;
+			margin-bottom: 24px;
+		}
 	}
 
 	&-nav {
