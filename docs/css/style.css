@@ -804,10 +804,10 @@ body {
 }
 
 .behavior-item__value-range::-ms-track {
-  height: 5px;
-  background: transparent;
-  border-color: transparent;
-  border-width: 2px 0;
+  height: 3px;
+  background-color: #dbdcde;
+  border-color: #dbdcde;
+  border-width: 0px;
   color: transparent;
 }
 
@@ -815,16 +815,16 @@ body {
   height: 17px;
   width: 17px;
   border-radius: 50%;
-  background: #2eb670;
+  background-color: #2eb670;
 }
 
 .behavior-item__value-range::-ms-fill-lower {
-  background: #2eb670;
+  background-color: #2eb670;
   border-radius: 2px;
 }
 
 .behavior-item__value-range::-ms-fill-upper {
-  background: #dbdcde;
+  background-color: #dbdcde;
   border-radius: 8px;
 }
 
@@ -862,7 +862,7 @@ body {
 
 .sidebar-nav {
   background-color: #fff;
-  background: #fff;
+  background-color: #fff;
   border: 1px solid #dbdcde;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;

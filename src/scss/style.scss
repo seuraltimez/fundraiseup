@@ -817,10 +817,10 @@ body {
 				}
 
 				&::-ms-track {
-					height: 5px;
-					background: transparent;
-					border-color: transparent;
-					border-width: 2px 0;
+					height: 3px;
+					background-color: #DBDCDE;
+					border-color: #DBDCDE;
+					border-width: 0px;
 					color: transparent;
 				}
 
@@ -828,16 +828,16 @@ body {
 					height: 17px;
 					width: 17px;
 					border-radius: 50%;
-					background: $colorGreen;
+					background-color: $colorGreen;
 				}
 
 				&::-ms-fill-lower {
-					background: $colorGreen;
+					background-color: $colorGreen;
 					border-radius: 2px;
 				}
 
 				&::-ms-fill-upper {
-					background: #DBDCDE;
+					background-color: #DBDCDE;
 					border-radius: 8px;
 				}
 			}
@@ -895,7 +895,7 @@ body {
 
 	&-nav {
 		background-color: $white;
-		background: #FFFFFF;
+		background-color: $white;
 		border: 1px solid #DBDCDE;
 		box-sizing: border-box;
 		border-radius: $bRadius;

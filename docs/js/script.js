@@ -68,6 +68,7 @@ function initRangeEl(rangeBlock) {
   const textEl = rangeBlock.querySelector('.score');
 
   if (isOlderEdgeOrIE()) {
+    rangeEl.style.height = "20px";
     rangeEl.addEventListener('change', function(e) {
       textEl.value = e.target.value + 'px';
     });
