@@ -5,6 +5,10 @@ select {
   font-family: WorkSans-Regular;
 }
 
+select::-ms-expand {
+  display: none;
+}
+
 button {
   padding: 0px;
   margin: 0px;
@@ -136,7 +140,7 @@ body {
 }
 
 .form-search__input {
-  margin-right: 40px;
+  margin-right: 43px;
   -webkit-box-flex: 0;
   -ms-flex: 0 0 336px;
   flex: 0 0 336px;
@@ -186,6 +190,14 @@ body {
   margin: 0px;
   margin-left: -4px;
   padding: 0px;
+  background-color: transparent;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  background-size: 9px 6px;
+  background-image: url("data:image/svg+xml,%3Csvg width='11' height='6' viewBox='0 0 11 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 0.75L5.5 5.25L10 0.75' stroke='%236C6D6F' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
 }
 
 .page-body__content {
@@ -435,8 +447,7 @@ body {
 .dontaion-status__block a.dontaion-status__block-value {
   font-size: 16px;
   line-height: 24px;
-  -webkit-text-decoration-line: underline;
-  text-decoration-line: underline;
+  text-decoration: underline;
   color: #6665dd;
 }
 
