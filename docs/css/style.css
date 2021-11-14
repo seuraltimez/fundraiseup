@@ -817,7 +817,6 @@ body {
   width: 17px;
   border-radius: 50%;
   background-color: #2eb670;
-  border-color: #2eb670;
 }
 
 .behavior-item__value-range::-ms-fill-lower {
