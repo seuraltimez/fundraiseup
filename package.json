@@ -4,7 +4,8 @@
   "description": "frontend test for fundraiseup",
   "main": "index.html",
   "scripts": {
-    "dev": "gulp --build"
+    "dev": "gulp --watch",
+    "build": "gulp --build"
   },
   "author": "Galeev Albert",
   "license": "ISC",
