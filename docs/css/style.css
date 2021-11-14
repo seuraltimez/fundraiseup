@@ -484,6 +484,7 @@ body {
   padding: 0 24px;
   overflow-x: auto;
   overflow-y: hidden;
+  z-index: 2;
 }
 
 .content-tabs__list-tab a {
@@ -500,6 +501,11 @@ body {
   white-space: nowrap;
 }
 
+.content-tabs__list-tab.is-active {
+  background-color: #fff;
+  z-index: 2;
+}
+
 .content-tabs__list-tab.is-active a {
   background-color: #fff;
   border-color: #dbdcde;
@@ -511,6 +517,7 @@ body {
   border-bottom: 1px solid #dbdcde;
   border-top: 1px solid #dbdcde;
   margin-top: -1px;
+  z-index: 1;
 }
 
 .content-tabs__contents-block {

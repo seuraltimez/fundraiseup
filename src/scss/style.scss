@@ -479,9 +479,9 @@ body {
 		padding: 0 24px;
 		overflow-x: auto;
 		overflow-y: hidden;
+		z-index: 2;
 
 		&-tab {
-
 			a {
 				padding: 15px 16px 12px 15px;
 				border: 1px solid transparent;
@@ -497,6 +497,8 @@ body {
 			}
 
 			&.is-active {
+				background-color: #fff;
+				z-index: 2;
 				a {
 					background-color: $white;
 					border-color: #DBDCDE;
@@ -511,6 +513,7 @@ body {
 		border-bottom: 1px solid #DBDCDE;
 		border-top: 1px solid #DBDCDE;
 		margin-top: -1px;
+		z-index: 1;
 
 		&-block {
 			display: none;
