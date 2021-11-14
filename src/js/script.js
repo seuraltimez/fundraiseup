@@ -1,27 +1,3 @@
-function initTabs() {
-  let tabs = document.querySelectorAll('.content-tabs');
-  for (let index = 0; index < tabs.length; index++) {
-    let tab = tabs[index];
-    let tabsItems = tab.querySelectorAll('.content-tabs__list-tab');
-    let tabsBlocks = tab.querySelectorAll('.content-tabs__contents-block');
-    for (let index = 0; index < tabsItems.length; index++) {
-      let tabs_item = tabsItems[index];
-      tabs_item.addEventListener('click', function (e) {
-        for (let index = 0; index < tabsItems.length; index++) {
-          let tabs_item = tabsItems[index];
-          tabs_item.classList.remove('open');
-          tabsBlocks[index].classList.remove('open');
-        }
-        tabs_item.classList.add('open');
-        tabsBlocks[index].classList.add('open');
-        e.preventDefault();
-      });
-    }
-  }
-}
-
-initTabs();
-
 // Polyfill forEach
 if (window.NodeList && !NodeList.prototype.forEach) {
   NodeList.prototype.forEach = function (callback, thisArg) {
@@ -31,6 +7,32 @@ if (window.NodeList && !NodeList.prototype.forEach) {
     }
   };
 }
+
+const initTabs = function () {
+  let tabNav = document.querySelectorAll('.content-tabs__list-tab');
+  let tabContent = document.querySelectorAll('.content-tabs__contents-block');
+  let tabName;
+  tabNav.forEach(function (item) {
+      item.addEventListener('click', selectTabNav)
+  });
+  function selectTabNav() {
+    tabNav.forEach(function (item) {
+        item.classList.remove('is-active');
+    });
+    this.classList.add('is-active');
+    tabName = this.getAttribute('data-tab-name');
+    selectTabContent(tabName);
+    console.log(tabName);
+  }
+  function selectTabContent(tab) {
+    tabContent.forEach(function (item) {
+        let classList = item.classList;
+        classList.contains(tab) ? classList.add('is-active') : classList.remove('is-active');
+    });
+  }
+};
+
+initTabs();
 
 const ranges = document.querySelectorAll('.input-range-block');
 
@@ -107,3 +109,6 @@ window.onload = function() {
 
 let stickyElem = document.querySelectorAll('.sidebar__content');
 Stickyfill.add(stickyElem);
+
+
+// classList polyfill

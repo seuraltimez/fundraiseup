@@ -25,6 +25,7 @@ input,
 select {
 	box-shadow: none;
 	font-family: WorkSans-Regular;
+	-webkit-appearance: none;
 }
 
 select::-ms-expand {
@@ -453,12 +454,20 @@ body {
 			line-height: 24px;
 			text-decoration: underline;
 			color: #6665DD;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			max-width: 160px;
 		}
 
 		span.dontaion-status__block-value {
 			font-size: 16px;
 			line-height: 24px;
 			color: #6C6D6F;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			max-width: 160px;
 		}
 	}
 }
@@ -468,15 +477,10 @@ body {
 		display: flex;
 		align-items: center;
 		padding: 0 24px;
-		border-bottom: 1px solid #DBDCDE;
-
-		@media (max-width: 1024px) {
-			overflow-x: auto;
-			overflow-y: hidden;
-		}
+		overflow-x: auto;
+		overflow-y: hidden;
 
 		&-tab {
-			margin-bottom: -1px;
 
 			a {
 				padding: 15px 16px 12px 15px;
@@ -489,13 +493,10 @@ body {
 				color: $color;
 				border-bottom: 0px;
 				display: block;
-
-				@media (max-width: 1024px) {
-					white-space: nowrap;
-				}
+				white-space: nowrap;
 			}
 
-			&.open {
+			&.is-active {
 				a {
 					background-color: $white;
 					border-color: #DBDCDE;
@@ -508,6 +509,8 @@ body {
 
 	&__contents {
 		border-bottom: 1px solid #DBDCDE;
+		border-top: 1px solid #DBDCDE;
+		margin-top: -1px;
 
 		&-block {
 			display: none;
@@ -517,7 +520,7 @@ body {
 				padding: 20px 20px;
 			}
 
-			&.open {
+			&.is-active {
 				display: block;
 			}
 		}
@@ -571,8 +574,20 @@ body {
 
 			label {
 				position: absolute;
-				left: 12px;
-				top: 10px;
+				left: 11px;
+				top: 50%;
+				transform: translate(0%, -50%);
+				font-weight: 400;
+				font-size: 16px;
+				color: $color;
+			}
+		}
+
+		@media (max-width: 375px){
+			&.designation{
+				.behavior-item__value{
+					width: 100%;
+				}
 			}
 		}
 
@@ -610,13 +625,15 @@ body {
 				line-height: 24px;
 				color: #2F2F30;
 				appearance: none;
+				background-color: #fff;
 				background-repeat: no-repeat;
-				background-position: right 10px center;
-				background-size: 14px 6px;
+				background-position: right 11px center;
+				background-size: 11px 6px;
 				background-image: url("data:image/svg+xml,%3Csvg width='11' height='6' viewBox='0 0 11 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 0.75L5.5 5.25L10 0.75' stroke='%236C6D6F' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
 
 				&.designation-select {
 					width: 296px;
+					padding: 8px 26px 7px 10px;
 
 					@media (max-width: 767px) {
 						width: 100%;
@@ -625,23 +642,23 @@ body {
 
 				&.goal-select {
 					width: 80px;
+					background-position: right 9px center;
 				}
 			}
 
 			&-number {
-				padding: 7px 12px;
 				font-weight: normal;
 				font-size: 16px;
-				line-height: 24px;
 				color: $color;
-				padding-left: 21px;
+				padding: 9px 12px 9px 12px;
 
 				&.goal-number {
 					border: 1px solid #A9ABAE;
 					border-radius: 6px;
-					margin-right: 22px;
-					max-width: 158px;
+					margin-right: 24px;
+					max-width: 156px;
 					width: 100%;
+					padding-left: 20px;
 				}
 			}
 
@@ -784,6 +801,7 @@ body {
 					width: 19px;
 					border-radius: 50%;
 					background-color: $colorGreen;
+					border-color: $colorGreen;
 				}
 
 				&::-moz-range-thumb {
@@ -794,26 +812,7 @@ body {
 					width: 17px;
 					border-radius: 50%;
 					background-color: $colorGreen;
-				}
-
-				&::-webkit-slider-thumb {
-					-webkit-appearance: none;
-					-moz-appearance: none;
-					-webkit-border-radius: 50%;
-					height: 19px;
-					width: 19px;
-					border-radius: 50%;
-					background-color: $colorGreen;
-				}
-
-				&::-moz-range-thumb {
-					-webkit-appearance: none;
-					-moz-appearance: none;
-					-moz-border-radius: 50%;
-					height: 17px;
-					width: 17px;
-					border-radius: 50%;
-					background-color: $colorGreen;
+					border-color: $colorGreen;
 				}
 
 				&::-ms-track {
@@ -829,6 +828,7 @@ body {
 					width: 17px;
 					border-radius: 50%;
 					background-color: $colorGreen;
+					border-color: $colorGreen;
 				}
 
 				&::-ms-fill-lower {
@@ -881,8 +881,8 @@ body {
 		position: -webkit-sticky;
 		position: sticky;
 		top: 24px;
-		
-		&:not(:last-child){
+
+		&:not(:last-child) {
 			margin-bottom: 24px;
 		}
 

@@ -3,6 +3,7 @@ select {
   -webkit-box-shadow: none;
   box-shadow: none;
   font-family: WorkSans-Regular;
+  -webkit-appearance: none;
 }
 
 select::-ms-expand {
@@ -455,12 +456,22 @@ body {
   line-height: 24px;
   text-decoration: underline;
   color: #6665dd;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 160px;
 }
 
 .dontaion-status__block span.dontaion-status__block-value {
   font-size: 16px;
   line-height: 24px;
   color: #6c6d6f;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 160px;
 }
 
 .content-tabs__list {
@@ -471,11 +482,8 @@ body {
   -ms-flex-align: center;
   align-items: center;
   padding: 0 24px;
-  border-bottom: 1px solid #dbdcde;
-}
-
-.content-tabs__list-tab {
-  margin-bottom: -1px;
+  overflow-x: auto;
+  overflow-y: hidden;
 }
 
 .content-tabs__list-tab a {
@@ -489,9 +497,10 @@ body {
   color: #2f2f30;
   border-bottom: 0px;
   display: block;
+  white-space: nowrap;
 }
 
-.content-tabs__list-tab.open a {
+.content-tabs__list-tab.is-active a {
   background-color: #fff;
   border-color: #dbdcde;
   border-radius: 6px 6px 0px 0px;
@@ -500,6 +509,8 @@ body {
 
 .content-tabs__contents {
   border-bottom: 1px solid #dbdcde;
+  border-top: 1px solid #dbdcde;
+  margin-top: -1px;
 }
 
 .content-tabs__contents-block {
@@ -507,7 +518,7 @@ body {
   padding: 40px 60px;
 }
 
-.content-tabs__contents-block.open {
+.content-tabs__contents-block.is-active {
   display: block;
 }
 
@@ -559,8 +570,14 @@ body {
 
 .behavior-item.goal label {
   position: absolute;
-  left: 12px;
-  top: 10px;
+  left: 11px;
+  top: 50%;
+  -webkit-transform: translate(0%, -50%);
+  -ms-transform: translate(0%, -50%);
+  transform: translate(0%, -50%);
+  font-weight: 400;
+  font-size: 16px;
+  color: #2f2f30;
 }
 
 .behavior-item.default-currency {
@@ -596,35 +613,37 @@ body {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  background-color: #fff;
   background-repeat: no-repeat;
-  background-position: right 10px center;
-  background-size: 14px 6px;
+  background-position: right 11px center;
+  background-size: 11px 6px;
   background-image: url("data:image/svg+xml,%3Csvg width='11' height='6' viewBox='0 0 11 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 0.75L5.5 5.25L10 0.75' stroke='%236C6D6F' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
 }
 
 .behavior-item__value-select.designation-select {
   width: 296px;
+  padding: 8px 26px 7px 10px;
 }
 
 .behavior-item__value-select.goal-select {
   width: 80px;
+  background-position: right 9px center;
 }
 
 .behavior-item__value-number {
-  padding: 7px 12px;
   font-weight: normal;
   font-size: 16px;
-  line-height: 24px;
   color: #2f2f30;
-  padding-left: 21px;
+  padding: 9px 12px 9px 12px;
 }
 
 .behavior-item__value-number.goal-number {
   border: 1px solid #a9abae;
   border-radius: 6px;
-  margin-right: 22px;
-  max-width: 158px;
+  margin-right: 24px;
+  max-width: 156px;
   width: 100%;
+  padding-left: 20px;
 }
 
 .behavior-item__value-radio {
@@ -771,6 +790,7 @@ body {
   width: 19px;
   border-radius: 50%;
   background-color: #2eb670;
+  border-color: #2eb670;
 }
 
 .behavior-item__value-range::-moz-range-thumb {
@@ -781,26 +801,7 @@ body {
   width: 17px;
   border-radius: 50%;
   background-color: #2eb670;
-}
-
-.behavior-item__value-range::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  -webkit-border-radius: 50%;
-  height: 19px;
-  width: 19px;
-  border-radius: 50%;
-  background-color: #2eb670;
-}
-
-.behavior-item__value-range::-moz-range-thumb {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  -moz-border-radius: 50%;
-  height: 17px;
-  width: 17px;
-  border-radius: 50%;
-  background-color: #2eb670;
+  border-color: #2eb670;
 }
 
 .behavior-item__value-range::-ms-track {
@@ -816,6 +817,7 @@ body {
   width: 17px;
   border-radius: 50%;
   background-color: #2eb670;
+  border-color: #2eb670;
 }
 
 .behavior-item__value-range::-ms-fill-lower {
@@ -980,15 +982,6 @@ body {
     padding: 20px 20px;
   }
 
-  .content-tabs__list {
-    overflow-x: auto;
-    overflow-y: hidden;
-  }
-
-  .content-tabs__list-tab a {
-    white-space: nowrap;
-  }
-
   .content-tabs__contents-block {
     padding: 20px 20px;
   }
@@ -1070,6 +1063,12 @@ body {
   }
 
   .behavior-item__value-select.designation-select {
+    width: 100%;
+  }
+}
+
+@media (max-width: 375px) {
+  .behavior-item.designation .behavior-item__value {
     width: 100%;
   }
 }
