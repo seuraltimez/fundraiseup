@@ -21,13 +21,13 @@
 2. Yarn
 3. Scss
 
-# Инструкция по развертыванию
+## Инструкция по развертыванию
 1. Клонируйте репозиторий  
 2. Установите командой **yarn** зависимости проекта
 
-# Описание команд
-**yarn build** - Билд проекта prod версии
+## Описание команд
+**yarn build** - Билд проекта prod версии <br>
 **yarn dev** - Запуск проекта в dev режиме
 
-# Посмотреть финальную версию на github pages
-<a href="https://seuraltimez.github.io/fundraiseup/"><strong>Финальная версия тестового задания в компанию FundraiseUp</strong></a>
+## Посмотреть финальную версию на github pages
+<a href="https://seuraltimez.github.io/fundraiseup/" target="_blank"><strong>Финальная версия тестового задания в компанию FundraiseUp</strong></a>
